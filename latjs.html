@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Mini</title>
+
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #4e54c8, #8f94fb);
+            font-family: Arial, sans-serif;
+        }
+
+        .calc-box {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 7px 15px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 280px;
+            text-align: center;
+        }
+
+        .calc-box h2 {
+            margin: 0;
+            color: #333;
+        }
+
+        input {
+            height: 35px;
+            font-size: 18px;
+            text-align: center;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            width: 55px;
+            height: 45px;
+            font-size: 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            color: white;
+            transition: .2s;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+        
+        #tambah { background: #28a745; }
+        #kurang { background: #dc3545; }
+        #kali { background: #007bff; }
+        #bagi { background: #fd7e14; }
+
+        #hasil {
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calc-box">
+        <h2>Kalkulator Mini</h2>
+        <input type="number" id="angka1" placeholder="Angka 1">
+        <input type="number" id="angka2" placeholder="Angka 2">
+        
+        <div class="btn-group">
+            <button id="tambah">+</button>
+            <button id="kurang">-</button>
+            <button id="kali">x</button>
+            <button id="bagi">:</button>
+        </div>
+
+        <div id="hasil">Hasil: -</div>
+    </div>
+
+    <script>
+        const a = document.getElementById('angka1');
+        const b = document.getElementById('angka2');
+        const hasil = document.getElementById('hasil');
+
+        document.getElementById('tambah').addEventListener('click', () => {
+            hasil.innerText = "Hasil: " + (parseFloat(a.value) + parseFloat(b.value));
+        });
+
+        document.getElementById('kurang').addEventListener('click', () => {
+            hasil.innerText = "Hasil: " + (parseFloat(a.value) - parseFloat(b.value));
+        });
+
+        document.getElementById('kali').addEventListener('click', () => {
+            hasil.innerText = "Hasil: " + (parseFloat(a.value) * parseFloat(b.value));
+        });
+
+        document.getElementById('bagi').addEventListener('click', () => {
+            hasil.innerText = "Hasil: " + (parseFloat(a.value) / parseFloat(b.value));
+        });
+    </script>
+
+</body>
+</html>

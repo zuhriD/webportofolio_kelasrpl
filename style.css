@@ -1,0 +1,39 @@
+body{
+   background-color: lightblue; 
+   color: red;
+}
+
+input[type="text"]{
+    background-color: lightgreen;
+    color: black;
+}
+
+.kotak{
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+    position: relative;
+    margin: auto;
+}
+.kotak:hover{
+    background-color: blue;
+    /* make delay animation */
+    transition: 2s;
+}
+
+.kotak h1{
+
+}
+.kotak p a{
+    
+}
+
+#box{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
